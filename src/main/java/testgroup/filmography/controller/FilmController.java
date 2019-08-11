@@ -10,13 +10,7 @@ import testgroup.filmography.model.Film;
 public class FilmController {
     private static Film film;
 
-    static {
-        film = new Film();
-        film.setTitle("Once upon a time in HollyWood");
-        film.setYear(2019);
-        film.setGenre("action");
-        film.setWatched(true);
-    }
+
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public ModelAndView allFilms(){
         ModelAndView modelAndView = new ModelAndView();

@@ -1,18 +1,18 @@
 package testgroup.filmography.model;
 
 public class Film {
-   private int Film;
-   private String title;
-   private int year;
-   private String genre;
-   private boolean watched;
+    private int id;
+    private String title;
+    private int year;
+    private String genre;
+    private boolean watched;
 
-    public int getFilm() {
-        return Film;
+    public int getId() {
+        return id;
     }
 
-    public void setFilm(int film) {
-        Film = film;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -46,9 +46,6 @@ public class Film {
     public void setWatched(boolean watched) {
         this.watched = watched;
     }
-    @Override
-    public String toString(){
-        return getGenre();
-    }
+
 
 }

@@ -21,8 +21,10 @@
 <c:if test="${empty film.title}">
     <c:url value="/add" var="var"/>
 </c:if>
-<c:if test="${!empty film.title}"/>
-<form action=""${var} method="POST">
+<c:if test="${!empty film.title}">
+    <c:url value="/edit" var="var"/>
+</c:if>
+<form action="${var}" method="POST">
     <c:if test="${empty film.title}">
         <input type="hidden" name="id" value="0">
     </c:if>
@@ -43,7 +45,6 @@
     <c:if test="${!empty film.title}">
         <input type="submit" value="Edit film">
     </c:if>
-    <input type="submit" value="Edit film">
 </form>
 </body>
 </html>

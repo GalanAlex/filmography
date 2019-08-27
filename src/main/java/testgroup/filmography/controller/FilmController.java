@@ -33,7 +33,16 @@ public class FilmController {
         Film film = filmService.getById(id);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("editPage");
-        modelAndView.addObject("film", filmService.getById(id));
+        modelAndView.addObject("film", film);
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public ModelAndView editPage(@ModelAttribute("film") Film film) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/");
+        filmService.edit(film);
         return modelAndView;
     }
 
@@ -44,13 +53,7 @@ public class FilmController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public ModelAndView editPage(@ModelAttribute("film") Film film) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/");
-        filmService.edit(film);
-        return modelAndView;
-    }
+
     @RequestMapping(value = "/add",method = RequestMethod.POST)
         public ModelAndView addFilm(@ModelAttribute("film") Film film) {
         ModelAndView modelAndView = new ModelAndView();
